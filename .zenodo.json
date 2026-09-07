@@ -1,0 +1,33 @@
+{
+  "title": "permafrost-sandbox - P60 honesty UI for permafrost-utac",
+  "description": "Honesty-map UI for permafrost-utac (GenesisAeon P60, v1.0.1). No package DOI yet.",
+  "creators": [
+    {
+      "name": "Roemer, Johann",
+      "affiliation": "MOR Research Collective"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "0.1.0",
+  "keywords": [
+    "GenesisAeon",
+    "P60",
+    "permafrost",
+    "sandbox"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5285/a6fbedd8ee5b472c8e84e55f746c1704",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "genesisaeon"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.2.0",
+  "generated": "2026-09-07",
+  "app": {
+    "id": "permafrost-sandbox",
+    "title": "Permafrost-Sandbox",
+    "kind": "mechanik",
+    "repo_url": "https://github.com/GenesisAeon/permafrost-sandbox"
+  },
+  "source_package": {
+    "name": "permafrost-utac",
+    "package_id": 60,
+    "version": "1.0.1",
+    "repo_url": "https://github.com/GenesisAeon/permafrost-utac",
+    "ported_note": "1:1 port at source v1.0.1. No new number."
+  },
+  "primary_sources": [
+    {
+      "authors": "ESA CCI / University of Oslo / CEDA",
+      "year": 2023,
+      "title": "ESA Climate Change Initiative (CCI) Permafrost, v5.0",
+      "journal": "NERC EDS CEDA",
+      "doi": "10.5285/a6fbedd8ee5b472c8e84e55f746c1704"
+    },
+    {
+      "authors": "Schuur, E.A.G. et al.",
+      "year": 2022,
+      "title": "Permafrost and Climate Change: Carbon Cycle Feedbacks From the Warming Arctic",
+      "journal": "Annual Review of Environment and Resources",
+      "doi": null
+    }
+  ],
+  "verified_quantities": [
+    {
+      "name": "MAGT_TREND_C_PER_DECADE",
+      "value": 0.29,
+      "unit": "C/decade",
+      "source": "ESA CCI 1997-2023"
+    },
+    {
+      "name": "CARBON_STOCK_GT_LOW",
+      "value": 1460.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "CARBON_STOCK_GT_HIGH",
+      "value": 1600.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "CARBON_STOCK_GT_MID",
+      "value": 1500.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "RELEASE_2C_GT_2100_LOW",
+      "value": 50.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "RELEASE_2C_GT_2100_HIGH",
+      "value": 100.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "RELEASE_4C_GT_2100_LOW",
+      "value": 150.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "RELEASE_4C_GT_2100_HIGH",
+      "value": 250.0,
+      "unit": "Gt C",
+      "source": "Schuur 2022"
+    },
+    {
+      "name": "ESA_CCI_RESOLUTION_KM",
+      "value": 1.0,
+      "unit": "km",
+      "source": "ESA CCI v5.0"
+    },
+    {
+      "name": "CRITICAL_TEMP_LOWER_C",
+      "value": -1.0,
+      "unit": "C",
+      "source": "ESACCILoader"
+    },
+    {
+      "name": "FROZEN_THRESHOLD_C",
+      "value": 0.0,
+      "unit": "C",
+      "source": "ESACCILoader"
+    }
+  ],
+  "tipping": {
+    "kind": "undefined",
+    "value": null,
+    "unit": null,
+    "derived_from": "Source NOT_A_BISTABLE_TIPPING_ELEMENT_NOTE (IPCC AR6): gradual feedback, not classical bistable tip. No Gamma.",
+    "defined": false,
+    "origin": "undefined"
+  },
+  "regen": {
+    "kind": "undefined",
+    "value": null,
+    "unit": null,
+    "derived_from": "No regeneration timescale in source; none invented.",
+    "defined": false,
+    "origin": "undefined"
+  },
+  "entropy_bg": {
+    "kind": "undefined",
+    "value": null,
+    "unit": null,
+    "derived_from": "No matching quantity in source; none invented.",
+    "defined": false,
+    "origin": "undefined"
+  },
+  "comparable": false,
+  "formula_ref": "Honesty NOTES + isBistableTippingElement; no ODE",
+  "honesty_checks": [
+    {
+      "name": "isBistableTippingElement",
+      "always_returns": false,
+      "meaning": "IPCC AR6: not classical bistable tipping element."
+    },
+    {
+      "name": "isMagtTrendAModelOutput",
+      "always_returns": false,
+      "meaning": "ESA CCI MAGT 0.29 C/decade is measured."
+    },
+    {
+      "name": "isGraceSuitableForPermafrostMonitoring",
+      "always_returns": false,
+      "meaning": "GRACE ~300 km too coarse vs 1 km ESA CCI."
+    },
+    {
+      "name": "hasSiberiaGroundStationDataGap",
+      "always_returns": true,
+      "meaning": "GTN-P/CALM underrepresentation since 2022."
+    },
+    {
+      "name": "isEsaCciComparativelyLessAffectedBySiberiaGap",
+      "always_returns": true,
+      "meaning": "Satellite-based product."
+    },
+    {
+      "name": "isSyntheticDataAPerYearMeasurement",
+      "always_returns": false,
+      "meaning": "SyntheticPermafrostData is illustrative."
+    },
+    {
+      "name": "isCarbonFeedbackACalibratedEmissionsModel",
+      "always_returns": false,
+      "meaning": "Explicit approximation only."
+    },
+    {
+      "name": "isCarbonStockWithinPublishedRange",
+      "always_returns": true,
+      "meaning": "Structural: mid in [low, high]."
+    }
+  ],
+  "framework_overlay": {
+    "used": false,
+    "terms": []
+  },
+  "disclaimer": "Graduelles Feedback, kein bistabiler Kipppunkt. Kein UTAC/CREP/AFET, kein Gamma."
+}

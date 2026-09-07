@@ -1,0 +1,8 @@
+{
+  "name": "Permafrost-Sandbox",
+  "shortName": "Permafrost",
+  "description": "Honesty map for permafrost-utac (P60). Gradual feedback, not a bistable tip. No UTAC/CREP/AFET.",
+  "themeColor": "#070b12",
+  "backgroundColor": "#070b12",
+  "url": "https://permafrost-sandbox.vercel.app"
+}
